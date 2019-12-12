@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<style>
+.btn-default{
+    background: rgb(0, 255, 0);
+    padding-left: 2px;
+    font-size: 20px;
+    font-size: 15px;
+    }
+.btn-outline{
+    background: rgb(223, 223, 52);
+    padding-left: 2px;
+    font-size: 12px;
+}
+</style>
+<body style="background: #202a3f">
+<div class="container" style="width: 100%; margin-top: 70px;">
+    <h3 style="color:whitesmoke">Your model will train as soon as you click the check button</h3>
+    <h5 style="color:whitesmoke">Enter the text you want to analyze the sentiment of</h5>
+    <h6 style="color:red">*It should be in Nepali</h6>
+     <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <div class="form-group">
+              {{ form.text(class="form-control form-control-lg")}}
+          </div>
+        <div class="form-group" style="margin-left: 2px">
+          {{ form.submit(class="btn btn-default") }}x
+        </div> 
+</div>
+
+</div>
+</div>
+</body>
+{% endblock body %}

@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block body %}
+<style>
+.btn-default{
+    background: orange;
+    padding-left: 2px;
+    font-size: 20px;
+    font-size: 15px;
+  }
+</style>
+<body style="background: #202a3f">
+<div class="container" style="width: 100%; margin-top: 70px;">
+    <h5 style="color:whitesmoke">Model has been trained</h5>
+     <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <div class="form-group">
+              {{ form.text(class="form-control form-control-lg")}}
+          </div>
+        <div class="form-group" style="margin-left: 2px">
+          {{ form.submit(class="btn btn-default") }}
+        </div> 
+</div>
+<div class="container">
+<p style="color: whitesmoke;">Positive: {{pos}}</p>
+<p style="color: whitesmoke;">Negative: {{neg}}</p>
+</div>
+<div class= "container">
+<div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: {{pos}}%;" aria-valuenow="{{pos}}" aria-valuemin="0" aria-valuemax="100">{{pos}}%</div>
+      </div>
+</div>
+<br>
+<div class= "container">
+<div class="progress">
+     <div class="progress-bar bg-danger" role="progressbar" style="width: {{neg}}%;" aria-valuenow="{{neg}}" aria-valuemin="0" aria-valuemax="100">{{neg}}%</div>
+    </div>
+</div>
+
+</div>
+</div>
+</body>
+{% endblock body %}
